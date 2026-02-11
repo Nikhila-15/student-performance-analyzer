@@ -4,18 +4,18 @@ for i in range(n):
     marks[i]=int(input('enter mark:'))
 print(marks)
 name=input('enter name:')
-if len(name)%2 != 0:
-    for i in range(len(marks)):
-        if(marks[i]+2 > 100):
-            marks[i]=100
+for i in range(n):
+    if marks[i]>=0 and marks[i]<=100:
+        if len(name)%2 !=0:
+            if marks[i]+2>100:
+                marks[i]=100
+            else:
+                marks[i]=marks[i]+2
         else:
-         marks[i]=marks[i] + 2
-else:
-    for i in range(len(marks)):
-        if marks[i] - 2 <0:
-            marks[i]=0
-        else:
-            marks[i]=marks[i] - 2
+            if marks[i]-2<0:
+                marks[i]=0
+            else:
+                marks[i]=marks[i]-2
 print("marks has been updated due to personalisation")
 print(marks)
 count=0
@@ -41,6 +41,7 @@ for i in range(len(marks)):
         print(marks[i],"-> Invalid")
 print('Total valid students:',count)
 print('Total failed students:',failed_count)
+
 
 
 
